@@ -1,0 +1,11 @@
+/* 
+  Titulos 
+*/
+.title {
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: var(--alternative-font);
+  font-size: var(--font-jumbo);
+  font-weight: 700;
+  margin: var(--spacing-36) 0;
+}

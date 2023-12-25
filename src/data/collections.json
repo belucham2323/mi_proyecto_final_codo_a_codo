@@ -1,0 +1,22 @@
+[
+  {
+   "id": 1,
+   "licence":1,
+   "product": 4
+  },
+  {
+   "id": 2,
+   "licence":2,
+   "product": 2
+  },
+  {
+   "id": 3,
+   "licence":3,
+   "product": 3
+  },
+  {
+   "id": 4,
+   "licence":4,
+   "product": 5
+  }  
+]

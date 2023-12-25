@@ -1,0 +1,21 @@
+/* 
+  Controlador numerico 
+*/
+.number {
+  display: flex;
+}
+.number .form__control {
+  max-width: 6em;
+}
+.number .number__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.number .number__buttons button {  
+  width: 1.2em;
+  height: 1.2em;
+  margin-left: .5em;
+  background-color: var(--dark-bg-solid);
+  color: var(--light-solid);  
+}

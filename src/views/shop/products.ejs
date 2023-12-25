@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include("../partials/head")%>
+<body>
+<%-include("../partials/header")%>
+<!-- <h2>usaurio: %=sesion %</h2> -->
+
+<!-- productos -->
+<main class="main-container">
+
+  <section class="shop container">
+
+    <!-- buscador -->
+    <aside class="shop_buscador">
+
+      <form class="form">
+
+        <div class="form__col">
+          <label class="form__label" for="buscar_producto">BUSCAR</label>
+          <input class="form__control" type="text" id="buscar_producto" name="buscar" placeholder="item o categoría" value="<%=Operador.buscar ? Operador.buscar : ''%>">
+        </div>
+
+        <div class="form__col">
+
+          <label class="form__label" for="buscardor-ordenar">ORDENAR</label>
+
+          <select class="form__control" name="ordenar" id="buscardor-ordenar">
+            <option value="" default="2" disabled="1"<%=!Operador.ordenar ? ' selected="1"' : ''%>></option>
+            <option value="A-Z"<%=Operador.ordenar == 'A-Z' ? ' selected="1"' : ''%>>Alfabético A-Z</option>
+            <option value="Z-A"<%=Operador.ordenar == 'Z-A' ? ' selected="1"' : ''%>>Alfabético Z-A</option>
+            <option value="9-1"<%=Operador.ordenar == '9-1' ? ' selected="1"' : ''%>>Precio de Mayor a Menor</option>
+            <option value="1-9"<%=Operador.ordenar == '1-9' ? ' selected="1"' : ''%>>Precio de Menor a Mayor</option>
+          </select>
+
+        </div>
+
+        <div class="form__col">
+
+          <label>PRECIO</label>
+
+          <div class="form__row">
+            <label class="form__label" for="buscador-precio_minimo">MIN</label>
+            <input class="form__control" type="number" name="precio_minimo" id="buscador-precio_minimo" min="1" placeholder="0" value="<%=Operador.precio_minimo ? Operador.precio_minimo : ''%>">
+            <span class="margin-1">-</span>
+            <label class="form__label" for="buscador-precio_maximo">MAX</label>
+            <input class="form__control" type="number" name="precio_maximo" id="buscador-precio_maximo" min="1" placeholder="0" value="<%=Operador.precio_maximo ? Operador.precio_maximo : ''%>">
+          </div>
+
+        </div>
+
+        <div class="form__col">
+          
+          <label>FILTRAR</label>
+
+          <ul class="check__list">
+            <li class="check__item">
+              <input class="form__control" type="checkbox" name="nuevo" id="buscador-filtro_nuevo"<%=Operador.nuevo ? ' checked="1"' : ''%>>
+              <label class="form__label" for="buscador-filtro_nuevo">NUEVOS</label>
+            </li>
+            <li class="check__item">
+              <input class="form__control" type="checkbox" name="oferta" id="buscador-filtro_oferta"<%=Operador.oferta ? ' checked="1"' : ''%>>
+              <label class="form__label" for="buscador-filtro_oferta">OFERTAS</label>
+            </li>
+            <li class="check__item">
+              <input class="form__control" type="checkbox" name="especial" id="buscador-filtro_especial"<%=Operador.especial ? ' checked="1"' : ''%>>
+              <label class="form__label" for="buscador-filtro_especial">EDICIÓN ESPECIAL</label>
+            </li>
+            <li class="check__item">
+              <input class="form__control" type="checkbox" name="favorito" id="buscador-filtro_favorito"<%=Operador.favorito ? ' checked="1"' : ''%>>
+              <label class="form__label" for="buscador-filtro_favorito">FAVORITOS</label>
+            </li>
+          </ul>
+
+        </div>
+
+        <fieldset class="form__row form__buttons margin-1">
+
+          <button class="button" type="submit">Enviar</button>
+  
+          <button class="button" type="reset">Limpiar</button>
+  
+        </fieldset>
+
+      </form>
+
+    </aside>
+
+    <!-- articulos por producto -->
+    <section class="pagination separate-1">
+
+      <!-- Grilla de 3 x 3 -->
+      <ul class="pagination__list">
+
+        <% for( const Product of products ){ %>
+
+        <li class="pagination__item">
+          
+          <article class="card">
+
+            <a class="card__link" href="/shop/product/<%=Product.id%>">
+
+              <picture class="card__cover">
+                <% if( Product.is_new ) { %>
+                  <span class="card__tag">Nuevo</span>
+                <% } %>
+                
+                <img class="card__img--front" src="<%=Product.img_front%>" alt="imagen del producto de lado frontal">
+                <img class="card__img--back" src="<%=Product.img_back%>" alt="imagen del producto de lado posterior">
+              </picture>
+
+              <div class="card__content">
+                <p class="card__licence"><%=Product.Licence.name%></p>
+                <h4 class="card__name"><%=Product.name%></h3>
+                <p class="card__price">$<%=Product.price.toFixed(2)%></p>
+                <p class="card__promo"><%=Product.Cuotas.name%></p>
+              </div>
+
+            </a>
+
+          </article>
+        </li>
+
+        <% } %>
+     
+      </ul>
+
+      <!-- paginación -->
+      <form class="pagination__controls">
+        <% if( paginacion.btn_anterior ) { %>
+        <!-- <button type="button" class="pagination_button"><</button> -->
+        <a type="button" class="pagination_button btn_left" href="/shop/<%=(paginacion.pagina-1)%>"><</a>
+        <a type="button" class="pagination_button" href="/shop/<%=(paginacion.pagina-1)%>"><%=(paginacion.pagina-1)%></a>
+        <% } %>
+        <button type="button" id="pagina_actual" class="pagination_button active"><%=paginacion.pagina%></button>
+        <% if( paginacion.btn_posterior ) { %>
+        <a type="button" class="pagination_button" href="/shop/<%=(paginacion.pagina+1)%>"><%=(paginacion.pagina+1)%></a>
+        <!-- <a type="button" class="pagination_button" active href="/shop/1">1</a> -->
+        <!-- <button type="button" class="pagination_button">2</button> -->
+        <!-- <span class="pagination_button">...</span> -->
+        <!-- <button type="button" class="pagination_button">9</button> -->
+        <!-- <button type="button" class="pagination_button">10</button> -->
+        <a type="button" class="pagination_button btn_right" href="/shop/<%=(paginacion.pagina+1)%>">></a>
+        <% } %>
+      </form>
+
+    </section>
+
+  </section>
+
+</main>
+<%-include("../partials/footer")%>
+<script>
+  const pagina_actual=document.getElementById("pagina_actual");
+  const btn_left=document.querySelector(".btn_left");
+  const btn_right=document.querySelector(".btn_right");
+  document.addEventListener("keyup",(e)=>{
+    if( btn_left )
+    if(e.keyCode==37)window.location="/shop/"+(Number(pagina_actual.innerText)-1);
+    
+
+    if( btn_right )
+    if(e.keyCode==39)window.location="/shop/"+(Number(pagina_actual.innerText)+1);
+    
+  })
+</script>
+<%-include("../partials/foot")%>
+</body>
+</html>

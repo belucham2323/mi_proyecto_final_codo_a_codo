@@ -1,0 +1,22 @@
+
+/* 
+  FORMS 
+*/
+
+/* etiquetas */
+.form__label {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ...para checkbox */
+.form__control[type="checkbox"] + .form__label {
+
+  font-size: var(--font-medium);
+}
+
+/* ...en renglones */
+.form__row .form__label {
+
+  font-size: var(--font-small);
+}

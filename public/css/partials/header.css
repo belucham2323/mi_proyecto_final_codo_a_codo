@@ -1,0 +1,12 @@
+/* 
+  Cabecera de Página
+*/
+.header {
+  background-color: var(--dark-bg-solid);
+  /* separacion de contenido */
+  padding: var(--spacing-36);
+
+  font-family: var(--alternative-font);
+  color: var(--light-solid);
+  background-color: var(--dark-bg-solid);  
+}

@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "user": 1,
+    "envio": 0,
+    "items": [
+      {
+        "id":1,
+        "product": 1,
+        "cantidad": 1
+      },
+      {
+        "id":2,
+        "product": 2,
+        "cantidad": 2
+      }
+    ]
+  }
+]

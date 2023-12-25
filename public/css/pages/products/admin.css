@@ -1,0 +1,14 @@
+
+.admin__search {
+  margin-top: var(--spacing-28);
+}
+
+.admin__title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__label.add {
+  font-weight: 700;
+  font-size: var(--font-large);
+}

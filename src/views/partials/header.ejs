@@ -1,0 +1,93 @@
+
+<!-- navbar -->
+<header class="header">
+
+  <nav class="navbar">
+
+    <picture class="navbar__logo">
+
+      <a href="/">
+        
+        <img src="/img/branding/logo_light_horizontal.svg" alt="Logotipo con Nombre">
+      </a>
+
+    </picture>
+
+    <ul class="navbar__menu">
+
+      <% if( locals.session_user ){ %>
+        
+        <li class="navbar__item">
+
+          <a class="navbar__link" href="/shop">SHOP</a>
+        </li>
+
+        <li class="navbar__item">
+
+          <a class="navbar__link" href="/products">PRODUCTOS</a>
+        </li>
+
+        <li class="navbar__item">
+
+          <a class="navbar__link" href="/user/logout">LOGOUT</a>
+        </li>        
+
+      <% }else{ %>
+
+        <li class="navbar__item with-submenu">
+
+          <a class="navbar__link with-icon" href="/shop">SHOP <iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
+          
+          <!-- menú desplegable -->
+          <ul class="submenu">
+            <li class="submenu__item">
+              <a class="submenu__link" href="/shop?category=1">Funkos</a>
+            </li>
+
+            <li class="submenu__item">
+              <a class="submenu__link" href="/shop?category=2">Remeras</a>
+            </li>
+
+            <li class="submenu__item">
+              <a class="submenu__link" href="/shop?category=3">LLaveros</a>
+            </li>
+          </ul>
+
+        </li>
+
+        <li class="navbar__item">
+          <a class="navbar__link" href="/contact">CONTACTO</a>
+        </li>
+
+        <% if( locals.iniciado ){ %>
+
+          <li class="navbar__item">
+            <a class="navbar__link" href="/user/login">LOGIN</a>
+          </li>
+        <% }else{ %>
+
+          <li class="navbar__item with-submenu">
+            <a class="navbar__link with-icon" href="/user/login">LOGIN <iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
+            <!-- menú desplegable -->
+            <ul class="submenu">
+              <li class="submenu__item">
+                <a class="submenu__link" href="/user/register">Register</a>
+              </li>
+            </ul>
+          </li>
+        <% } %>
+        
+
+        <li class="navbar__item">
+          <a class="navbar__cart" href="/shop/cart">
+            <img src="/img/icons/cart-icon.svg" alt="ícono de carrito">
+          </a>
+        </li>      
+
+      <% } %>
+
+    </ul>
+
+  </nav>
+  <!-- <h3>%=locals.session_user %</h3> -->
+</header>

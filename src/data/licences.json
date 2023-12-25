@@ -1,0 +1,22 @@
+[
+  {
+   "id": 1,   
+   "name": "Star Wars",
+   "description": "Disfruta de una saga que sigue agregando personajes a su Colección."
+  },
+  {
+   "id": 2,   
+   "name": "Pokemon",
+   "description": "Atrapa todos los que puedas y disfruta de una colección llena de amigos."
+  },
+  {
+   "id": 3,   
+   "name": "Harry Potter",
+   "description": "Revive los recuerdos de una saga llena de magia y encanto."
+  },
+  {
+   "id": 4,   
+   "name": "Naruto",
+   "description": "Se un Ninja!"
+  }  
+]

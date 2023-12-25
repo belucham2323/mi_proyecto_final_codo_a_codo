@@ -1,0 +1,20 @@
+<!-- Externos -->
+<!-- iconos: para chevrones -->
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>            
+
+<% if( head.scripts ){ %>
+
+    <!-- Habilito Glide -->
+    <% if( head.scripts.includes("components/slider") ){ %>
+    
+      <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+      <script src="https://unpkg.com/@glidejs/glide"></script>
+  
+    <% } %>      
+  
+    <!-- Internos -->
+    <% head.scripts.forEach( script => { %>
+      
+      <script src="/js/<%=script%>.js" type="module"></script>
+    <% }); %>
+  <% } %>

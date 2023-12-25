@@ -1,0 +1,73 @@
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/*  
+  Paginacion
+*/
+.pagination {
+}
+
+/* ul */
+.pagination__list {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ul > li */
+.pagination__item {
+  /*  
+    flex-grow: 
+      https://developer.mozilla.org/es/docs/Web/CSS/flex-grow
+    flex-shrink: 
+      https://developer.mozilla.org/es/docs/Web/CSS/flex-shrink
+    flex-basis: 
+      https://developer.mozilla.org/es/docs/Web/CSS/flex-basis
+  */
+  flex: 1 1 clamp(250px, 30%, 30%);
+}
+
+/* 
+  form de controles  
+*/
+.pagination__controls {
+  margin: var(--spacing-36) auto;
+  width: fit-content;  
+  display: flex;
+  gap: var(--spacing-8);
+}
+.pagination__controls > :is(:first-child,:last-child) {
+  color: var(--control-enabled);
+}
+
+.pagination_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  width: 3em;
+  height: 3em;
+  background-color: var(--light-bg-solid);
+  border: 1px solid var(--control-border);
+  border-radius: .4em;
+  font-size: var(--font-small);
+  font-weight: 700;  
+}
+
+button.pagination_button {
+  cursor: pointer;
+  transition: background .3s ease-in-out;
+}
+
+button.pagination_button.active {
+  border-color: var(--primary-solid);
+  color: var(--primary-solid);
+}
+
+button.pagination_button:hover:not(.active,:disabled) {
+  background-color: var(--primary-900);  
+  color: var(--dark-solid);
+  border-color: var(--control-border);
+}
+
+button.pagination_button:disabled {
+  background-color: var(--control-disabled);  
+}

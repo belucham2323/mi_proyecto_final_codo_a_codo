@@ -1,0 +1,156 @@
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/*  
+  formularios
+*/
+.form {
+
+}
+
+.form fieldset { 
+  border-radius: 10px;
+}
+
+/* 
+  contenido Vertical 
+*/
+.form__col {
+  display: flex;
+  flex-direction: column;
+}
+.form__col > label {    
+  font-size: var(--font-large);
+  padding: var(--spacing-12) 0;
+}
+
+/* 
+  contenido horizontal
+*/
+.form__row {
+  display: flex;
+  align-items: center;
+}
+.form__row > .form__label {
+
+  margin-right: .5em;
+}
+
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+/*  
+  Campos : label: input
+*/
+.form__field {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.form__field .form__label {
+  font-weight: 400;
+  font-size: var(--font-large);
+  text-align: right;
+}
+
+.form__field .form__control {   
+  margin-left: var(--spacing-8);
+  color: var(--dark-solid);
+}
+
+.form__field .form__control[type="text"], 
+.form__field .form__control[type="number"],
+.form__field .form__control[type="email"],
+.form__field .form__control[type="password"],
+.form__field .form__control[type="telephone"] {
+  border: 0;
+  border-radius: 0;
+  border-bottom: 2px solid var(--primary-solid);
+}
+
+/* en renglones */
+.form__row > .form__field {
+  margin-right: var(--spacing-8);
+}
+
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+
+/* valores: span con valor o algo destacado como un dato */
+.form_value {
+  color: var(--control-value);
+}
+
+/* 
+  controles 
+*/
+.form__control {
+  padding: var(--spacing-8);  
+  border-radius: 6px;
+  background-color: var(--light-bg-solid);
+  color: var(--control-value);
+}
+
+select.form__control {
+  border: 2px solid var(--dark-solid);
+}
+
+/* checkbox */
+.form__control[type="checkbox"] {
+  border: 2px solid var(--control-border);
+  width: 24px;
+  height: 24px;
+}
+
+.check__item {
+  display: flex;
+  align-items: center;  
+}
+
+.check__item > input + .form__label {
+  margin-left: .25em;
+}
+/* Listado de checks */
+.check__list .check__item {
+  margin-bottom: .5em;
+}
+
+/* Textos y Selectores */
+select.form__control,
+.form__control[type="text"], 
+.form__control[type="password"],
+.form__control[type="email"] {
+  width: 20.4em;
+}
+
+textarea.form__control {
+  width: 100%;
+  font-size: var(--font-large);
+}
+
+/* Número */
+.form__control[type="number"] {
+  width: 6em;
+  text-align: center;
+}
+
+/* archivos */
+.form__control[type="file"] {
+  border: 0;
+}
+
+/* imágenes */
+.form__images {
+  text-align: center;
+}
+.form__images .form__image:not(:last-child) {  
+  margin-right: var(--spacing-16);
+}
+.form__images .form__image img {
+  width: 150px;
+}
+.form__images .form__image figcaption {
+  font-weight: 500;
+  font-size: var(--font-medium);
+  border-top: 1px solid var(--primary-solid);
+  margin-top: var(--spacing-8);
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include("./partials/head")%>
+<body>
+  <%-include("./partials/header")%>
+  <h2>usaurio: <%=sesion %></h2>
+  <!-- banner -->
+  <%-include("./components/banner")%>
+
+  <!-- Contenido principal -->
+  <main class="main-container">
+
+    <% for( const Collection of collections ) { %>
+
+    <!-- Colecciones -->
+    <section class="collection container">
+
+      <article class="collection__content">
+
+        <h3 class="collection__title"><%=Collection.Licence.name%></h3>
+
+        <p class="collection__text"><%=Collection.Licence.description%></p>
+
+        <a class="collection__link" href="/shop?licence=<%=Collection.licence%>">VER COLECCIÓN</a>
+      
+      </article>  
+
+      <picture class="collection__cover">
+        <img src="<%=Collection.Product.img_front%>" alt="<%=Collection.Product.description%>">
+      </picture>
+      
+    </section>
+
+    <% } %>
+
+    <!-- Ultimos Lanzamientos -->
+    <%-include("./components/products")%>
+    
+  </main>
+  <%-include("./partials/footer")%>
+
+  <%-include("./partials/foot")%>
+</body>
+
+</html>

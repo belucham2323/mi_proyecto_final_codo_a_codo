@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include("../partials/head")%>
+<body>
+<%-include("../partials/header")%>
+
+<main class="main-container">
+
+  <article class="register container">
+
+    <h2 class="title">CREA TU CUENTA</h2>
+
+    <p class="text">Completa el formulario para ser parte del mundo de los Funkos</p>
+
+    <form class="form" action="/register" method="post">
+
+      <fieldset class="form__col">
+
+        <div class="form__field">
+          <label class="form__label" for="user-name">Nombre:</label>
+          <input class="form__control" type="text" name="name" id="user-name" placeholder="John">
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="user-lastName">Apellido:</label>
+          <input class="form__control" type="text" name="lastName" id="user-lastName" placeholder="Doe">
+        </div>
+
+      </fieldset>
+
+      <fieldset class="form__col">
+
+        <div class="form__field">
+          <label class="form__label" for="user-email">Email:</label>
+          <input class="form__control" type="email" name="email" id="user-email" placeholder="johndoe@correo.com">
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="user-password">Contraseña:</label>
+          <input class="form__control" type="password" name="password" id="user-password" placeholder="Aa1%">
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="user-password_repit">Repetir Contraseña:</label>
+          <input class="form__control" type="password" name="password_repit" id="user-password_repit" placeholder="Aa1%">
+        </div>            
+
+      </fieldset>
+
+      <fieldset class="form__row">
+
+        <button class="button" type="submit">Registrar</button>
+
+        <div class="check__item">
+          <input class="form__control" type="checkbox" name="accept" id="user-accept">
+          <label class="form__label" for="user-accept">Acepto <a class="link" href="#" target="_blank">Términos y Condicines</a></label>
+        </div>
+
+      </fieldset>
+      <p id="msg" style=" color:white; background-color: green;"></p>
+    </form>
+
+  </article>
+
+</main>
+<%-include("../partials/footer")%>
+<%-include("../partials/foot")%>
+</body>
+</html>

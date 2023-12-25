@@ -1,0 +1,15 @@
+/* 
+  Pie de Página
+*/
+.footer {  
+  background-color: var(--dark-bg-solid);
+  color: var(--light-solid);
+  font-family: var(--alternative-font);
+  padding: var(--spacing-68);  
+  margin-top: var(--spacing-28);    
+}
+
+.footer__copy {
+  text-align: center;
+  margin-top: var(--spacing-36);
+}

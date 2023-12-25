@@ -1,0 +1,11 @@
+
+.register > .text {
+  font-weight: 500;
+  font-size: var(--font-xxlarge);
+}
+
+.register > .form {
+  width: 100%;
+  max-width: 650px;
+  padding: var(--spacing-16);
+}

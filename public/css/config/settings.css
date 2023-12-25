@@ -1,0 +1,109 @@
+/* 
+  Clases Utilitarias ( de ayuda )
+*/
+
+/* /////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////// */
+/* 
+  Contenedor de Seccion Principal 
+*/
+.container {
+  /* ancho máximo de todas las vistas */
+  max-width: 80vw;
+  /* centro horizontalmente */
+  margin: 0 auto;
+}
+
+.d-none {
+  display: none;
+}
+
+/* /////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////// */
+/* 
+  clase de ayuda para elementos con iconos 
+*/
+.with-icon {
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--spacing-8) !important;
+}
+
+/* /////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////// */
+/* 
+  Dinamica de Manu desplegable 
+*/
+.with-submenu .submenu {
+  display: none;
+}
+.with-submenu:hover .submenu {
+  display: block;
+}
+
+/* /////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////// */
+/* Separaciones */
+.margin-1 {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+/* /////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////// */
+/* Distribucion */
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-start {
+  align-items: start;
+  align-content: start;
+}
+.align-center {
+  align-items: center;
+  align-content: center;
+}
+.align-end {
+  align-items: end;
+  align-content: end;
+}
+.align-around {
+  align-content: space-around;  
+}
+.align-between {  
+  align-content: space-between;  
+}
+.align-evenly {
+  align-content: space-evenly;
+}
+
+.justify-start {
+  justify-content: start;
+  justify-items: start;
+}
+.justify-center {
+  justify-content: center;
+  justify-items: center;
+}
+.justify-end {
+  justify-content: start;
+  justify-items: start;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-between {  
+  justify-content: space-between;  
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}

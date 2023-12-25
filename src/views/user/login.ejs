@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include("../partials/head")%>
+<body>
+<%-include("../partials/header")%>
+<main class="main-container">
+
+  <section class="login container">
+    
+    <h2 class="title login__title">INGRESAR A MI CUENTA</h2>
+
+    <article class="login__content">
+
+      <form class="form" action="/user/login" method="POST">
+
+        <fieldset class="form__col">
+
+          <div class="form__field">
+            <label class="form__label" for="user-email">Email:</label>
+            <input class="form__control" type="email" name="email" id="user-email" placeholder="johndoe@correo.com">
+          </div>
+  
+          <div class="form__field">
+            <label class="form__label" for="user-password">Contraseña:</label>
+            <input class="form__control" type="password" name="password" id="user-password" placeholder="*********">
+          </div>
+
+        </fieldset>
+
+        <fieldset class="form__row">
+
+          <button class="button" type="submit">Ingresar</button>
+
+          <div class="check__item">
+            <input class="form__control" type="checkbox" name="remember_me" id="user-remember_me">
+            <label class="form__label" for="user-remember_me">¿Recordarme?</label>
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+          <a class="link" href="#" >Olvidé mi Contraseña</a>
+        </fieldset>
+
+      </form>
+    </article>
+
+  </section>
+
+</main>
+<%-include("../partials/footer")%>
+<%-include("../partials/foot")%>
+</body>
+</html>

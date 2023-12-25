@@ -1,0 +1,16 @@
+
+.table {
+  width: 100%;
+  font-size: var(--font-large);
+}
+
+.table__column {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: var(--spacing-16);
+}
+
+.table__data {
+  padding-bottom: var(--spacing-16);
+}

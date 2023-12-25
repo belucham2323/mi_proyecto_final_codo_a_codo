@@ -1,0 +1,54 @@
+/* 
+  Nomralizacion por Selector universal 
+*/
+*,
+*::before,
+*::after 
+{
+  margin: 0;
+  padding: 0;
+  /* Tamaño de caja respecto a margenes y rellenos */
+  box-sizing: border-box; /* el tamaño es fijo y no varía según el margen y padding */
+}
+
+html {
+  font-family: var(--base-font);
+  /* el tamaño por defecto de los textos es de 16px ( 1 em ) */
+  font-size: 10px; /* ahora 1 em son 10px */
+  color: var(--dark-solid); /* para ser heredado por todos */
+}
+
+/*
+  Modelo de Diseños desde figma -> components -> design model
+  - https://www.figma.com/file/IjTSeE2BpRd5Gk9VakNIhC/Challenge-Integrador
+*/
+
+
+a {
+  text-decoration: none;
+  /* para que se mantenga las del padre mas proximo */
+  font-family: inherit;
+  color: inherit;
+}
+
+ol, ul { 
+  list-style: none;
+}
+
+p {
+  font-size: 1.8em;
+}
+
+picture img {
+  width: 100%;
+
+}
+
+fieldset {
+  border: 0;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}

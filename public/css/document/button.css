@@ -1,0 +1,37 @@
+/* ////////////////////////////////////////////// */
+/* ////////////////////////////////////////////// */
+/* 
+  botones de accion
+*/
+.button {
+  padding: var(--spacing-12);
+  background-color: var(--primary-solid);
+  color: var(--light-solid);
+  /* globales */
+  width: 103px;
+  padding: var(--spacing-12);
+  font-weight: 400;
+  /* font-size: var(--font-xxsmall); */
+}
+
+/* contenedor horizontal */
+.form__buttons .button {
+  margin-left: var(--spacing-8);
+}
+
+/* todo el ancho */
+.button.line {
+  width: 100%;
+}
+
+/* boton agregar: "+" */
+.button.add {
+  padding: 0;
+  width: var(--font-medium);
+  height: var(--font-medium);
+  font-weight: 900;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}

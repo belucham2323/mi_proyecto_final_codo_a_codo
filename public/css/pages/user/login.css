@@ -1,0 +1,13 @@
+
+.login {
+  width: 515px;
+}
+
+.login > .form {
+  width: 382px;
+  margin: auto;
+}
+
+.login .link {
+  font-size: var(--font-xsmall);
+}

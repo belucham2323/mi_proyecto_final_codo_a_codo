@@ -1,0 +1,30 @@
+
+<footer class="footer">
+
+  <nav class="navbar container">
+
+    <!-- enlaces -->
+    <ul class="navbar__items">
+      <li class="navbar__item">
+        <a class="navbar__link" href="/shop/funkos">SHOP</a>
+      </li>
+      <% if( !locals.session_user ){ %>
+      <li class="navbar__item">
+        <a class="navbar__link" href="/user/login">LOGIN</a>
+      </li>
+      <% } %>
+      <li class="navbar__item">
+        <a class="navbar__link" href="/contact">CONTACTO</a>
+      </li>
+    </ul>
+
+    <!-- logo -->
+    <picture>
+      <img src="/img/branding/isotype.svg" alt="Logotipo">
+    </picture>          
+
+  </nav>
+
+  <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+
+</footer>

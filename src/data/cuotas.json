@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "name": "Sin Cuotas"
+   },  
+  {
+   "id": 3,
+   "name": "3 cuotas sin Interes"
+  },
+  {
+    "id": 6,
+    "name": "6 cuotas sin Interes"
+   },
+   {
+    "id": 9,
+    "name": "9 cuotas sin Interes"
+   },
+   {
+    "id": 12,
+    "name": "12 cuotas sin Interes"
+   },
+   {
+    "id": 18,
+    "name": "18 cuotas sin Interes"
+   },
+   {
+    "id": 24,
+    "name": "24 cuotas sin Interes"
+   }
+]

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include("../partials/head")%>
+<body>
+<%-include("../partials/header")%>
+<main class="main-container">
+
+  <article class="product__edit container">
+
+    <h2 class="title">EDITAR ITEM</h2>
+
+    <form class="form" action="/products/<%=Product.id%>" method="POST" >
+
+      <fieldset class="form__row justify-between">
+
+        <div class="form__field">
+          <label class="form__label" for="product-category">Categoría:</label>
+          <select class="form__control" name="category" id="product-category">
+
+            <option default hidden>Seleccionar</option>
+
+            <% for( const Category of categorys ){ %>
+
+            <option 
+              value="<%=Category.id%>"
+              <%=`${Category.id == Product.category ? " selected" : ""}`%>
+            >
+              <%=Category.name%>
+            </option>
+
+            <% } %>
+
+          </select>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="product-licence">Licencia:</label>
+          <select class="form__control" name="licence" id="product-licence">
+
+            <option default hidden>Seleccionar</option>
+
+            <% for( const Licence of licences ){ %>
+
+              <option 
+                value="<%=Licence.id%>"
+                <%=`${Licence.id == Product.licence ? " selected" : ""}`%>
+              >
+                <%=Licence.name%>
+              </option>
+            <% } %>
+            
+          </select>
+        </div>          
+
+      </fieldset>
+
+      <fieldset class="form__col">
+
+        <div class="form__field">
+          <label class="form__label" for="product-name">Nombre del Producto:</label>
+          <input class="form__control" type="text" name="name" id="product-name" value="<%=Product.name%>">
+        </div>
+
+        <div class="form__field">
+          <textarea class="form__control" name="description" id="produc-description" cols="30" rows="10" placeholder="Descripción del Producto"><%=Product.description%></textarea>
+        </div>
+
+      </fieldset>
+
+      <fieldset class="form__row">
+
+        <div class="form__field">
+          <label class="form__label" for="product-sku">SKU:</label>
+          <input class="form__control" type="text" name="SKU" id="product-sku" value="<%=Product.sku%>">
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="product-price">Precio:</label>
+          <input class="form__control" type="text" name="price" id="product-price" value="$ <%=Product.price.toFixed(2)%>">
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="product-stock">Stock:</label>
+          <input class="form__control" type="number" name="stock" id="product-stock" value="<%=Product.stock%>">
+        </div>
+        
+      </fieldset>
+
+      <fieldset class="form__row">
+
+        <div class="form__field">
+          <label class="form__label" for="product-dues">Descuento:</label>
+          <input class="form__control" type="text" name="dues" id="product-dues" value="<%=Product.dues%>%">
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="product-cuotas">Cuotas:</label>
+          <select class="form__control" name="cuotas" id="product-cuotas">
+
+            <% for( const Cuota of cuotas ){ %>
+
+              <option value="<%=Cuota.id%>"
+                <%=`${ Cuota.id == cuotas_defaul ? ` default="1"` : ""}`%>
+                <%=`${ Cuota.id == Product.cuotas ? ` selected="1"` : ""}`%>
+              >
+                <%=Cuota.name%>
+              </option>
+            <% } %>         
+          </select>
+        </div>
+
+      </fieldset>
+
+      <fieldset class="form__col">
+
+        <div class="form__field">
+          <label class="form__label" for="product-imagenes">Imágenes:</label>
+          <input class="form__control" type="file" name="imagenes" id="product-imagenes" accept="image/*" multiple >
+        </div>
+        
+        <div class="form__field form__images">
+          
+          <figure class="form__image">
+            <img src="<%=Product.img_front%>" alt="Figura de Frente">
+            <figcaption>Frente</figcaption>
+          </figure>
+
+          <figure class="form__image">
+            <img src="<%=Product.img_back%>" alt="Figura de Dorso">
+            <figcaption>Dorso</figcaption>
+          </figure>
+
+        </div>
+
+      </fieldset>
+
+      <fieldset class="form__row form__buttons">
+
+        <button class="button" type="submit">Modificar Producto</button>
+
+      </fieldset>
+
+    </form>
+
+  </article>
+  
+</main>
+<%-include("../partials/footer")%>
+<%-include("../partials/foot")%>
+</body>
+</html>

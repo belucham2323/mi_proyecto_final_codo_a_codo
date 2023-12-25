@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include("../partials/head")%>
+<body>
+<%-include("../partials/header")%>
+
+<main class="main-container">
+
+  <!-- Ficha del Producto -->
+  <section class="product container">
+    
+    <picture class="product__cover card__cover">
+      <img class="card__img--front " src="<%=Product.img_front%>" alt="<%=Product.description%>">
+      <img class="card__img--back" src="<%=Product.img_back%>" alt="<%=Product.description%>">
+    </picture>        
+
+    <article class="product__content">
+
+      <h3 class="product__licence"><%=Product.Licence.name%></h3>
+
+      <p class="product__name"><%=Product.name%></p>
+
+      <p class="product__description"><%=Product.description%></p>
+
+      <p class="product__price">$ <%=Product.price.toFixed(2)%></p>
+
+      <form class="product__add form" method="post" action="/shop/product/<%=Product.id%>">
+
+        <fieldset class="form__row">
+
+          <div class="number">
+
+            <input class="form__control" type="text" name="add" id="product-add" placeholder="0">
+
+            <span class="number__buttons">
+              <button type="button" class="number__button--add">+</button>
+              <button type="button" class="number__button--remove">-</button>
+            </span>
+
+          </div>              
+
+          <button type="submit" class="button">Agregar al Carrito</button>
+
+        </fieldset>
+
+      </form>
+
+      <a class="product__link" href="#">
+        <u>Ver métodos de pago</u> - <%=Product.Cuotas.name%>
+      </a>
+    
+    </article>  
+    
+  </section>   
+
+  <!-- Productos Relacionados -->
+
+  <%-include("../components/products")%>  
+
+</main>
+<%-include("../partials/footer")%>
+<%-include("../partials/foot")%>
+</body>
+</html>

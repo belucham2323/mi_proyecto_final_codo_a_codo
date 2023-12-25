@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include("../partials/head")%>
+<body>
+<%-include("../partials/header")%>
+<main class="main-container">
+
+  <article class="product_create container">
+
+    <h2 class="title">CREAR NUEVO ITEM</h2>
+
+    <form class="form" action="/products/create" method="POST">
+
+      <fieldset class="form__row justify-between">
+
+        <div class="form__field">
+          <label class="form__label" for="produc-category">Categoría:</label>
+          <select class="form__control" name="category" id="produc-category">
+
+            <option default hidden>Seleccionar</option>
+
+            <% for( const Category of categorys ){ %>
+
+              <option value="<%=Category.id%>"><%=Category.name%></option>
+            <% } %>
+
+          </select>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="produc-licence">Licencia:</label>
+          <select class="form__control" name="licence" id="produc-licence">
+
+            <option default hidden>Seleccionar</option>
+
+            <% for( const Licence of licences ){ %>
+
+              <option value="<%=Licence.id%>"><%=Licence.name%></option>
+            <% } %>
+          </select>
+        </div>          
+
+      </fieldset>
+      
+      <fieldset class="form__col">
+
+        <div class="form__field">
+          <label class="form__label" for="product-name">Nombre del Producto:</label>
+          <input class="form__control" type="text" name="name" id="product-name" >
+        </div>
+        
+        <div class="form__field">
+          <textarea class="form__control" name="descripcion" id="product-description" cols="30" rows="10" placeholder="Descripción del Producto">Descripción del Producto</textarea>
+        </div>
+
+      </fieldset>
+
+      <fieldset class="form__row">
+
+        <div class="form__field">
+          <label class="form__label" for="produc-sku">SKU:</label>
+          <input class="form__control" type="text" name="sku" id="product-sku">
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="product-price">Precio:</label>
+          <input class="form__control" type="text" name="price" id="product-price" value="$0">
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="product-stock">Stock:</label>
+          <input class="form__control" type="number" name="stock" id="product-stock" value="0">
+        </div>
+        
+      </fieldset>
+
+      <fieldset class="form__row">
+
+        <div class="form__field">
+          <label class="form__label" for="product-dues">Descuento:</label>
+          <input class="form__control" type="text" name="dues" id="product-dues" value="0%">
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="product-cuotas">Cuotas:</label>
+          <select class="form__control" name="cuotas" id="product-cuotas">
+                      
+            <% for( const Cuota of cuotas ){ %>
+              <option 
+                value="<%=Cuota.id%>"
+                <%=`${ Cuota.id == cuotas_defaul ? ` default="1" selected="1"` : ""}`%>
+              >
+                <%=Cuota.name%>
+              </option>
+            <% } %>
+
+          </select>
+        </div>
+
+      </fieldset>
+
+      <fieldset class="form__col">
+
+        <div class="form__field">
+          <label class="form__label" for="product-img">Imágenes:</label>
+          <input class="form__control" type="file" name="imagenes" id="product-img" accept="image/*" multiple>
+        </div>
+        
+        <div class="form__field">
+          
+        </div>            
+
+      </fieldset>
+
+      <fieldset class="form__row form__buttons">
+
+        <button class="button" type="submit">Agregar Producto</button>
+
+        <button class="button" type="reset">Limpiar</button>
+
+      </fieldset>
+
+    </form>
+    
+  </article>
+
+</main>
+<%-include("../partials/footer")%>
+<%-include("../partials/foot")%>
+</body>
+</html>

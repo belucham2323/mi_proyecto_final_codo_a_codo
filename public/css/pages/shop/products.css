@@ -1,0 +1,19 @@
+
+/*  
+  Seccion Principal
+*/
+.shop {
+  display: flex;
+  margin-top: 6em;
+}
+
+/* 
+  Formularios
+*/
+aside .form__control {
+  border: 2px solid var(--dark-solid);
+}
+
+/*  
+  Componentes
+*/

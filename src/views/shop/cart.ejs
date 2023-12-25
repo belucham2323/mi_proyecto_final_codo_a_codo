@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include("../partials/head")%>
+<body>
+<%-include("../partials/header")%>
+<main class="main-container">
+  <!-- <h3>%= dato_extra %</h3> -->
+  <!-- Listado -->
+  <section class="products container">
+
+    <h2 class="title">CARRITO DE COMPRAS</h2>
+    
+    <table class="table">
+
+      <thead>
+
+        <tr class="table__item">
+          <th class="table__column">DETALLE DEL PRODUCTO</th>
+          <th class="table__column">CANTIDAD</th>
+          <th class="table__column">TOTAL</th>
+          <th class="table__column"></th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <!-- items -->
+        <% for( const Cart_Item of Cart.items ){ %>
+
+        <tr class="table__item">
+
+          <!-- ficha -->
+          <td class="table__data">
+
+            <section class="product">
+              
+              <picture class="product__cover">
+                <img class="card__img--front" src="<%=Cart_Item.Product.img_front%>" alt="<%=Cart_Item.Product.description%>">
+                <img class="card__img--back" src="<%=Cart_Item.Product.img_back%>" alt="<%=Cart_Item.Product.description%> en Caja">                    
+              </picture>
+
+              <article class="product__content">
+                <h4 class="product__name"><%=Cart_Item.Product.name%></h4>
+                <p class="product__licence"><%=Cart_Item.Product.Licence.name%></p>
+                <p class="product__price">precio: $<%=Cart_Item.Product.price.toFixed(2)%></p>
+              </article>
+
+            </section>
+          </td>
+
+          <!-- cantidades -->
+          <td class="table__data">
+
+            <form action="" class="product__modify form">
+
+              <div class="number">
+  
+                <input class="form__control" type="text" name="cantidad" id="item_1-cantidad" value="<%=Cart_Item.cantidad%>">
+
+                <span class="number__buttons">
+                  <button type="button" class="number__button--add">+</button>
+                  <button type="button" class="number__button--remove">-</button>
+                </span>
+
+              </div>
+  
+            </form>
+          </td>
+
+          <!-- total en pesos -->
+          <td class="table__data">
+            <p class="product__total"><%=`${ Number( Cart_Item.Product.price * Cart_Item.cantidad ).toFixed(2) }`%></p>
+          </td>
+
+          <!-- eliminar item -->
+          <td class="table__data">
+            <img src="/img/icons/delete_trash.svg" alt="Eliminar Producto del Carrito">
+          </td>              
+        </tr>
+
+        <% } %>
+
+      </tbody>
+
+    </table>
+
+  </section>
+
+  <!-- Resuemen -->
+  <section class="summary container">
+
+    <h2 class="title">RESUMEN</h2>
+
+    <form class="form" action="">
+
+      <fieldset class="form__col">
+
+        <div class="form__row">
+          <label class="form__label">Cantidad de Elementos</label>
+          <span class="form_value summary__cantidad"><%=Cart.cantidad%></span>
+        </div>
+
+        <div class="form__row">
+          <label class="form__label">Subtotal</label>
+          <span class="form_value summary__subtotal"><%=Cart.subtotal%></span>
+        </div>
+        
+        <div class="form__row">
+          <label class="form__label">Envío</label>
+          <span class="form_value summary__envio"><%=Cart.envio%></span>
+        </div>
+        
+        <div class="form__row">
+          <label class="form__label">Total</label>
+          <span class="form_value summary__total"><%=Cart.total%></span>
+        </div>       
+        
+      </fieldset>
+
+      <button type="submit" class="button line">Ir a Pagar</a>
+
+    </form>
+
+  </section>
+
+</main>
+<%-include("../partials/footer")%>
+<%-include("../partials/foot")%>
+</body>
+</html>

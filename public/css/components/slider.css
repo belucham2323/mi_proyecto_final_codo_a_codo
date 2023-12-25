@@ -1,0 +1,55 @@
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* 
+  Slider
+*/
+.slider {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* margin: var(--spacing-60) auto; */
+}
+
+.slider__title {
+  font-family: var(--alternative-font);
+  font-size: 30px;
+  text-transform: uppercase;
+  padding: 20px 0px;
+}
+
+/* ul con items en horizontal */
+/* 
+dlt- por motivos de conflictos con el glamp
+
+  .slider__items {
+    display: flex;
+    gap: var(--spacing-24);
+  }
+
+  .slider__item {
+
+  }
+*/
+
+/* 
+  agr- estilos para botones del slider 
+*/
+.slider iconify-icon {
+  color: var(--dark-bg-solid);
+  font-size: var(--font-small);
+  font-weight: 700;
+}
+.glide__arrow--left {
+  left: 0;
+}
+.glide__arrow--right {
+  right: 0;
+}
+@media (min-width: 768px) {
+  .slider {
+    gap: var(--spacing-36);
+  }
+  .slider__title {
+    font-size: var(--font-display);
+  }
+}

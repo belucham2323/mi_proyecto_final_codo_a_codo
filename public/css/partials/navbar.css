@@ -1,0 +1,79 @@
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/*  
+  barra de navegacion
+*/
+.navbar {
+
+  display: flex;
+  /* separo elementos principales: logo + menu */
+  justify-content: space-between;
+  /* alineo contenido */
+  align-items: center;  
+}
+
+
+.navbar__logo {
+  
+  max-width: 300px;
+}
+
+.navbar__menu {
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar__link {
+  /* ajusto */
+  font-size: 16px;
+  /* espaciados para el efecto hover */
+  padding: 3px 6px;
+  /* para mantener el padding en el flujo de la pagina se cambia de inline porque es una etiqueta "a"  */
+  display: inline-block; 
+  /* retarda el efecto del hover */
+  transition: background .3s ease-in-out;
+}
+
+.navbar__link:hover {
+
+  background-color: var(--primary-900);
+}
+
+/* 
+  Menu Desplegable 
+*/
+
+.submenu {
+  /* lo sacamos del flujo de la pagina, debajo del padre */
+  position: absolute;
+  width: 150px;
+  background-color: var(--dark-bg-solid);
+  /* por el tema de los filtros en la imagen del banner */
+  z-index: 3;
+}
+
+.submenu__link {
+  /* ajusto */
+  font-size: var(--font-medium);
+  /* espaciados para el efecto hover */
+  padding: var(--spacing-8) var(--spacing-16);
+  /* para mantener el padding en el flujo de la pagina se cambia de inline porque es una etiqueta "a"  */
+  display: block; 
+  /* retarda el efecto del hover */
+  transition: background .3s ease-in-out;
+}
+.submenu__link:hover {
+  background-color: var(--primary-900);
+}
+@media (min-width: 768px) {
+  .navbar__menu {
+    gap: var(--spacing-20);
+
+  }
+  .navbar__link {
+    font-size: var(--font-medium);
+    padding: var(--spacing-8) var(--spacing-16);
+  }
+}

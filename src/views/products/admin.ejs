@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include("../partials/head")%>
+<body>
+<%-include("../partials/header")%>
+<main class="main-container">
+
+  <article class="admin container">
+
+    <form class="form admin__search">
+
+      <fieldset class="form__row">
+
+        <img class="icon" src="/img/icons/search_icon.svg" alt="Lupa para Buscar">
+
+        <input class="form__control" type="text" name="buscar" id="product-listar" placeholder="Código, Licencia o Categoría...">
+
+      </fieldset>
+
+    </form>
+
+    <div class="admin__title">
+
+      <h2 class="title">Listado de Productos</h2>
+
+      <p class="form with-icon">AGREGAR <a class="button add" href="/products/create">+</a></p>
+
+    </div>
+    
+    <table class="table">
+
+      <thead class="table__head">
+        <tr class="table__item">
+          <th class="table__column">ID</th>
+          <th class="table__column">Código</th>
+          <th class="table__column">Nombre del Producto</th>
+          <th class="table__column">Licencia</th>
+          <th class="table__column">Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody class="table__body">
+
+        <% for( const Product of products ){ %>
+
+        <tr class="table__item">
+          <td class="table__data"><%=Product.id%></td>
+          <td class="table__data"><%=Product.sku%></td>
+          <td class="table__data"><%=Product.name%></td>
+          <td class="table__data"><%=Product.Licence.name%></td>
+          <td class="table__data">
+
+            <nav class="with-icon">
+
+              <a class="icon" href="/products/<%=Product.id%>?">
+                <img src="/img/icons/edit_pencil.svg" alt="Lapiz para Editar">
+              </a>
+
+              <a class="icon" href="/products/<%=Product.id%>?">
+                <img src="/img/icons/delete_trash.svg" alt="Tacho para Descartar">
+              </a>
+
+            </nav>
+
+          </td>
+        </tr>
+
+        <% } %>
+      
+      </tbody>
+
+    </table>
+
+  </article>
+
+</main>
+<%-include("../partials/footer")%>
+<%-include("../partials/foot")%>
+</body>
+</html>

@@ -1,0 +1,76 @@
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* 
+  Cards
+*/
+
+.card {
+
+}
+.card__link {
+
+}
+
+/* picture: con efecto de una única imagen visible */
+.card__cover {
+  /* por efecto mantengo fijo el tamaño del contenedor */
+  display: flex; 
+  /* para etiqueta nuevo */
+  position: relative;
+}
+.card__cover img {
+  animation: fade .7s;
+}
+.card__cover:hover .card__img--back {
+  display: block;
+}
+.card__cover:hover .card__img--front {
+  display: none;
+}
+
+/* imagenes */
+.card__img--front {
+ display: block;
+}
+.card__img--back {
+  display: none;
+}
+
+/* Etiqueta: NUEVO */
+.card__tag {
+  font-size: var(--font-xsmall);
+  text-transform: uppercase;
+  background-color: var(--primary-solid);
+  color: var(--light-solid);
+  padding: var(--spacing-8) var(--spacing-12);
+  /* posiciono: si el padre no es relativo, las posiciones son respecto al body */
+  position: absolute;
+  right: 0;/* de lado derecho */
+}
+
+
+/* article */
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+  padding: var(--spacing-16);
+}
+.card__licence {
+  font-size: var(--font-xsmall);
+  font-weight: 500;
+}
+.card__name {
+  font-size: var(--font-medium);
+  font-weight: 700;  
+
+}
+.card__price {
+  font-size: var(--font-small);
+}
+.card__promo {
+  font-size: var(--font-xxsmall);
+  font-weight: 700;
+  color: var(--secondary-solid);
+}
